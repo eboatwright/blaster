@@ -7,11 +7,18 @@ using Microsoft.Xna.Framework.Input;
 namespace eboatwright {
     public class Player : GameObject {
 
+        enum ANIMATION_STATES {
+            IDLE = 0,
+            WALK = 1,
+            JUMP = 2,
+            SHOOT = 3,
+        }
+
         public const int SPRITE_WIDTH = 12, SPRITE_HEIGHT = 13;
         public const int COLLISION_WIDTH = 13, COLLISION_HEIGHT = 14;
-        public const float MOVE_SPEED = 0.85f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -6f, COYOTE_TIME = 8;
+        public const float MOVE_SPEED = 0.85f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -6f, COYOTE_TIME = 8, GUN_RECOIL = -0.5f;
 
-        private bool jumpReleased, shootReleased, shooting;
+        private bool jumpReleased, shootReleased;
         private float lastGrounded = 0f;
 
         private Vector2 velocity;
@@ -23,24 +30,17 @@ namespace eboatwright {
 
         private bool flipSprite;
 
-
-        // ANIMATION STUFF
-        public int animationIndex, animationFrame;
-        public float animationTimer;
-        public Animation idleAnimation = new Animation(new int[]{ 0, 1 }, 10f);
-        public Animation walkAnimation = new Animation(new int[]{ 2, 3, 4, 3 }, 10f);
-        public Animation jumpAnimation = new Animation(new int[]{ 5 }, 1f);
-        public Animation shootAnimation = new Animation(new int[]{ 6, 6 }, 2f);
-        public Animation currentAnimation;
-
-
+        public Animator animator;
 
         public Player(Scene scene) : base(scene) {}
 
         public override void Initialize() {
-            tags.Add("Player");
+            AddTags(new string[]{ "Player" });
             map = (Map)scene.FindGameObjectWithTag("Map");
-            currentAnimation = idleAnimation;
+            animator = new Animator(new Animation[]{ new Animation(new int[] { 0, 1 }, 10f),
+                                                    new Animation(new int[] { 2, 3, 4, 3 }, 10f),
+                                                    new Animation(new int[] { 5 }, 1f),
+                                                    new Animation(new int[] { 6, 6 }, 3.6f) });
         }
 
         public override void LoadContent(ContentManager content) {
@@ -48,17 +48,17 @@ namespace eboatwright {
         }
 
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
-            if(!shooting) {
+            if(!animator.doingUninterruptableAnimation) {
                 if (keyboard.IsKeyDown(Keys.Left)) {
                     velocity.X -= MOVE_SPEED * deltaTime;
-                    ChangeAnimation(walkAnimation);
+                    animator.ChangeAnimation((int)ANIMATION_STATES.WALK);
                     flipSprite = true;
                 } else if (keyboard.IsKeyDown(Keys.Right)) {
                     velocity.X += MOVE_SPEED * deltaTime;
-                    ChangeAnimation(walkAnimation);
+                    animator.ChangeAnimation((int)ANIMATION_STATES.WALK);
                     flipSprite = false;
                 } else
-                    ChangeAnimation(idleAnimation);
+                    animator.ChangeAnimation((int)ANIMATION_STATES.IDLE);
 
                 if (keyboard.IsKeyDown(Keys.X)) {
                     if (jumpReleased) {
@@ -70,19 +70,19 @@ namespace eboatwright {
                     }
                 } else
                     jumpReleased = true;
+
+                if (lastGrounded <= 0f)
+                    animator.ChangeAnimation((int)ANIMATION_STATES.JUMP);
             }
 
             if (keyboard.IsKeyDown(Keys.Z)) {
                 if (shootReleased) {
                     shootReleased = false;
-                    ChangeAnimation(shootAnimation);
-                    shooting = true;
+                    animator.ChangeAnimation((int)ANIMATION_STATES.SHOOT, true);
+                    velocity.X = GUN_RECOIL * (flipSprite ? -1f : 1f);
                 }
             } else
                 shootReleased = true;
-
-            if (lastGrounded <= 0f)
-                ChangeAnimation(jumpAnimation);
 
             velocity.Y += GRAVITY * deltaTime;
             position.Y += velocity.Y * deltaTime;
@@ -128,22 +128,7 @@ namespace eboatwright {
                     }
                 }
 
-
-            // ANIMATION STUFF
-            if(animationTimer <= 0f) {
-                animationTimer = currentAnimation.frameDuration;
-                animationIndex++;
-            } else animationTimer -= deltaTime;
-
-            if (animationIndex >= currentAnimation.frameIndexes.Length) {
-                animationIndex = 0;
-                if(shooting) {
-                    shooting = false;
-                    ChangeAnimation(idleAnimation);
-                }
-            }
-
-            animationFrame = currentAnimation.frameIndexes[animationIndex];
+            animator.Update(deltaTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch) {
@@ -151,15 +136,7 @@ namespace eboatwright {
                 camera = (Camera)scene.FindGameObjectWithTag("Camera");
                 return;
             }
-            spriteBatch.Draw(playerImg, position - camera.scroll, new Rectangle(animationFrame * SPRITE_WIDTH, 0, 12, 13), Color.White, 0f, Vector2.Zero, 1f, (flipSprite ? SpriteEffects.FlipHorizontally : SpriteEffects.None), 0f);
-        }
-
-        public void ChangeAnimation(Animation animation) {
-            if(currentAnimation != animation) {
-                currentAnimation = animation;
-                animationIndex = 0;
-                animationTimer = animation.frameDuration;
-            }
+            spriteBatch.Draw(playerImg, position - camera.scroll, new Rectangle(animator.animationFrame * SPRITE_WIDTH, 0, 12, 13), Color.White, 0f, Vector2.Zero, 1f, (flipSprite ? SpriteEffects.FlipHorizontally : SpriteEffects.None), 0f);
         }
     }
 }

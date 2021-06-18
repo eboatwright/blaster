@@ -15,7 +15,7 @@ namespace eboatwright {
         }
 
         public override void Initialize() {
-            tags.Add("Camera");
+            AddTags(new string[]{ "Camera" });
         }
 
         public override void LoadContent(ContentManager content) {}

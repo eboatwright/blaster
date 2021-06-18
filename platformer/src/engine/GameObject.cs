@@ -28,5 +28,11 @@ namespace eboatwright {
         public void Destroy() {
             destroyed = true;
         }
+
+        public void AddTags(string[] tags) {
+            foreach(string tag in tags) {
+                this.tags.Add(tag);
+            }
+        }
     }
 }

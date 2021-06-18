@@ -30,7 +30,7 @@ namespace eboatwright {
                 {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}
             };
 
-            tags.Add("Map");
+            AddTags(new string[]{ "Map" });
         }
 
         public override void LoadContent(ContentManager content) {
