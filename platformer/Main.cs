@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -12,9 +13,12 @@ namespace eboatwright {
 
         private Scene currentScene;
 
+        public static ContentManager content;
+
         public Main() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            content = Content;
             IsMouseVisible = true;
         }
 
@@ -33,7 +37,7 @@ namespace eboatwright {
 
         protected override void LoadContent() {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            currentScene.LoadContent(Content);
+            currentScene.LoadContent();
         }
 
         protected override void Update(GameTime gameTime) {

@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -18,7 +17,7 @@ namespace eboatwright {
             AddTags(new string[]{ "Camera" });
         }
 
-        public override void LoadContent(ContentManager content) {}
+        public override void LoadContent() {}
 
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
             if (player == null) {

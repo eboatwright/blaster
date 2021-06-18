@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -17,9 +16,9 @@ namespace eboatwright {
                 gameObject.Initialize();
         }
 
-        public void LoadContent(ContentManager content) {
+        public void LoadContent() {
             foreach (GameObject gameObject in gameObjects)
-                gameObject.LoadContent(content);
+                gameObject.LoadContent();
         }
 
         public void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {

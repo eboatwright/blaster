@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -10,7 +9,7 @@ namespace eboatwright {
         public List<string> tags;
         public Scene scene;
         public Vector2 position;
-        public bool destroyed;
+        public bool destroyed, loaded;
 
         public GameObject(Scene scene) {
             tags = new List<string>();
@@ -18,21 +17,15 @@ namespace eboatwright {
         }
 
         public abstract void Initialize();
-
-        public abstract void LoadContent(ContentManager content);
-
+        public abstract void LoadContent();
         public abstract void Update(float deltaTime, MouseState mouse, KeyboardState keyboard);
-
         public abstract void Draw(SpriteBatch spriteBatch);
 
-        public void Destroy() {
-            destroyed = true;
-        }
+        public void Destroy() { destroyed = true; }
 
         public void AddTags(string[] tags) {
-            foreach(string tag in tags) {
+            foreach(string tag in tags)
                 this.tags.Add(tag);
-            }
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -16,7 +15,9 @@ namespace eboatwright {
 
         public const int SPRITE_WIDTH = 12, SPRITE_HEIGHT = 13;
         public const int COLLISION_WIDTH = 13, COLLISION_HEIGHT = 14;
-        public const float MOVE_SPEED = 0.85f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -6f, COYOTE_TIME = 8, GUN_RECOIL = -0.5f;
+        public const float MOVE_SPEED = 0.85f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -6f, COYOTE_TIME = 8, GUN_RECOIL = 0.5f;
+
+        public Vector2 SHOOT_RIGHT_OFFSET = new Vector2(9, 4), SHOOT_LEFT_OFFSET = new Vector2(-1, 4);
 
         private bool jumpReleased, shootReleased;
         private float lastGrounded = 0f;
@@ -37,49 +38,50 @@ namespace eboatwright {
         public override void Initialize() {
             AddTags(new string[]{ "Player" });
             map = (Map)scene.FindGameObjectWithTag("Map");
-            animator = new Animator(new Animation[]{ new Animation(new int[] { 0, 1 }, 10f),
-                                                    new Animation(new int[] { 2, 3, 4, 3 }, 10f),
-                                                    new Animation(new int[] { 5 }, 1f),
-                                                    new Animation(new int[] { 6, 6 }, 3.6f) });
+            animator = new Animator(new Animation[]{
+                new Animation(new int[] { 0, 1 }, 10f),
+                new Animation(new int[] { 2, 3, 4, 3 }, 7.2f),
+                new Animation(new int[] { 5 }, 1f),
+                new Animation(new int[] { 6 }, 5f)
+            });
         }
 
-        public override void LoadContent(ContentManager content) {
-            playerImg = content.Load<Texture2D>("player");
+        public override void LoadContent() {
+            playerImg = Main.content.Load<Texture2D>("player");
         }
 
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
-            if(!animator.doingUninterruptableAnimation) {
-                if (keyboard.IsKeyDown(Keys.Left)) {
-                    velocity.X -= MOVE_SPEED * deltaTime;
-                    animator.ChangeAnimation((int)ANIMATION_STATES.WALK);
-                    flipSprite = true;
-                } else if (keyboard.IsKeyDown(Keys.Right)) {
-                    velocity.X += MOVE_SPEED * deltaTime;
-                    animator.ChangeAnimation((int)ANIMATION_STATES.WALK);
-                    flipSprite = false;
-                } else
-                    animator.ChangeAnimation((int)ANIMATION_STATES.IDLE);
+            if (keyboard.IsKeyDown(Keys.Left)) {
+                velocity.X -= MOVE_SPEED * deltaTime;
+                if (!animator.doingUninterruptableAnimation) animator.ChangeAnimation((int)ANIMATION_STATES.WALK);
+                flipSprite = true;
+            } else if (keyboard.IsKeyDown(Keys.Right)) {
+                velocity.X += MOVE_SPEED * deltaTime;
+                if (!animator.doingUninterruptableAnimation) animator.ChangeAnimation((int)ANIMATION_STATES.WALK);
+                flipSprite = false;
+            } else if (!animator.doingUninterruptableAnimation)
+                animator.ChangeAnimation((int)ANIMATION_STATES.IDLE);
 
-                if (keyboard.IsKeyDown(Keys.X)) {
-                    if (jumpReleased) {
-                        jumpReleased = false;
-                        if (lastGrounded > 0f) {
-                            lastGrounded = 0f;
-                            velocity.Y += JUMP_HEIGHT;
-                        }
+            if (keyboard.IsKeyDown(Keys.X)) {
+                if (jumpReleased) {
+                    jumpReleased = false;
+                    if (lastGrounded > 0f) {
+                        lastGrounded = 0f;
+                        velocity.Y += JUMP_HEIGHT;
                     }
-                } else
-                    jumpReleased = true;
+                }
+            } else
+                jumpReleased = true;
 
-                if (lastGrounded <= 0f)
-                    animator.ChangeAnimation((int)ANIMATION_STATES.JUMP);
-            }
+            if (lastGrounded <= 0f && !animator.doingUninterruptableAnimation)
+                animator.ChangeAnimation((int)ANIMATION_STATES.JUMP);
 
             if (keyboard.IsKeyDown(Keys.Z)) {
                 if (shootReleased) {
                     shootReleased = false;
                     animator.ChangeAnimation((int)ANIMATION_STATES.SHOOT, true);
-                    velocity.X = GUN_RECOIL * (flipSprite ? -1f : 1f);
+                    velocity.X *= GUN_RECOIL;
+                    scene.AddGameObject(new Projectile(scene, true, !flipSprite, position + (flipSprite ? SHOOT_LEFT_OFFSET : SHOOT_RIGHT_OFFSET)));
                 }
             } else
                 shootReleased = true;
@@ -96,13 +98,11 @@ namespace eboatwright {
                         Rect TileRect = new Rect(x * Map.TILE_SIZE, y * Map.TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE);
                         if (PlayerRect.Overlaps(TileRect)) {
                             if (velocity.Y > 0f) {
-                                velocity.Y = 0f;
                                 lastGrounded = COYOTE_TIME;
                                 position.Y = y * Map.TILE_SIZE - COLLISION_HEIGHT + 1;
-                            } else if (velocity.Y < 0f) {
-                                velocity.Y = 0f;
+                            } else if (velocity.Y < 0f)
                                 position.Y = y * Map.TILE_SIZE + Map.TILE_SIZE;
-                            }
+                            velocity.Y = 0f;
                         }
                     }
                 }
@@ -117,13 +117,11 @@ namespace eboatwright {
                     if (map.mapValues[y, x] > 0 && map.mapValues[y, x] < 14) {
                         Rect TileRect = new Rect(x * Map.TILE_SIZE, y * Map.TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE);
                         if (PlayerRect.Overlaps(TileRect)) {
-                            if (velocity.X > 0f) {
-                                velocity.X = 0f;
+                            if (velocity.X > 0f)
                                 position.X = x * Map.TILE_SIZE - COLLISION_WIDTH + 1;
-                            } else if (velocity.X < 0f) {
-                                velocity.X = 0f;
+                            else if (velocity.X < 0f)
                                 position.X = x * Map.TILE_SIZE + Map.TILE_SIZE;
-                            }
+                            velocity.X = 0f;
                         }
                     }
                 }
