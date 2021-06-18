@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/enemyProjectile.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/enemyRover.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/gem.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/heart.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/levelTileset.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/player.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/playerProjectile.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/sparkle.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File>enemyProjectile.png</File>
+    <File>enemyRover.png</File>
+    <File>gem.png</File>
+    <File>heart.png</File>
+    <File>levelTileset.png</File>
+    <File>player.png</File>
+    <File>playerProjectile.png</File>
+    <File>sparkle.png</File>
+  </DestFiles>
+</SourceFileCollection>

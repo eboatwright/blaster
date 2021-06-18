@@ -1,14 +1,21 @@
 ﻿<Properties StartupConfiguration="{8647CB98-C05D-4FD6-BB46-A126C9198EB4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Game1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
     <Files>
-      <File FileName="Game1.cs" Line="46" Column="1" />
+      <File FileName="src/gameObjects/Player.cs" Line="112" Column="1" />
+      <File FileName="Main.cs" Line="51" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="platformer" expanded="True">
             <Node name="platformer" expanded="True">
-              <Node name="Game1.cs" selected="True" />
+              <Node name="Content" expanded="True" />
+              <Node name="src" expanded="True">
+                <Node name="engine" expanded="True" />
+                <Node name="gameObjects" expanded="True" />
+                <Node name="scenes" expanded="True" />
+              </Node>
+              <Node name="Main.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -21,5 +28,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.platformer FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.platformer PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
