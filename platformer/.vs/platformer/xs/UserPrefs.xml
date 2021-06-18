@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{8647CB98-C05D-4FD6-BB46-A126C9198EB4}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
     <Files>
-      <File FileName="src/gameObjects/Player.cs" Line="112" Column="1" />
-      <File FileName="Main.cs" Line="51" Column="31" />
+      <File FileName="src/gameObjects/Player.cs" Line="75" Column="136" />
+      <File FileName="Main.cs" Line="51" Column="85" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
