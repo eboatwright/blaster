@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ajoz1vFuLQig0xivfdfym0rfv4vP3nukzSFgO1NsAlkE/N3/q5750U2mHTdSX3Fc+44aMtkwkAFdIR1GxX4p5g==",
+  "success": true,
+  "projectFilePath": "/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/platformer.csproj",
+  "expectedPackageFiles": [
+    "/Users/evanboatwright/.nuget/packages/monogame.content.builder.task/3.8.0.1641/monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
+    "/Users/evanboatwright/.nuget/packages/monogame.framework.desktopgl/3.8.0.1641/monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"
+  ],
+  "logs": []
+}

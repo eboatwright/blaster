@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "platformer", "platformer.csproj", "{8647CB98-C05D-4FD6-BB46-A126C9198EB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8647CB98-C05D-4FD6-BB46-A126C9198EB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8647CB98-C05D-4FD6-BB46-A126C9198EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8647CB98-C05D-4FD6-BB46-A126C9198EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8647CB98-C05D-4FD6-BB46-A126C9198EB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8217378D-F386-4B5D-B3DA-ED28A974F94C}
+	EndGlobalSection
+EndGlobal
