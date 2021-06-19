@@ -15,7 +15,7 @@ namespace eboatwright {
 
         public const int SPRITE_WIDTH = 12, SPRITE_HEIGHT = 13;
         public const int COLLISION_WIDTH = 13, COLLISION_HEIGHT = 14;
-        public const float MOVE_SPEED = 0.85f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -6f, COYOTE_TIME = 8, GUN_RECOIL = 0.5f;
+        public const float MOVE_SPEED = 0.69f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -5.6f, COYOTE_TIME = 8, GUN_RECOIL = 0.56f;
 
         public Vector2 SHOOT_RIGHT_OFFSET = new Vector2(9, 4), SHOOT_LEFT_OFFSET = new Vector2(-1, 4);
 
@@ -67,7 +67,7 @@ namespace eboatwright {
                     jumpReleased = false;
                     if (lastGrounded > 0f) {
                         lastGrounded = 0f;
-                        velocity.Y += JUMP_HEIGHT;
+                        velocity.Y = JUMP_HEIGHT;
                     }
                 }
             } else
