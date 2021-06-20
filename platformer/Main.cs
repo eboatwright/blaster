@@ -16,8 +16,7 @@ namespace eboatwright {
 
         public static ContentManager content;
         public static Random random;
-
-        private Color particleColor = new Color(120, 172, 187);
+        public static Color lightGreyColor = new Color(120, 172, 187);
 
         public Main() {
             graphics = new GraphicsDeviceManager(this);

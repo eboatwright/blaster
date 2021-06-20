@@ -15,7 +15,7 @@ namespace eboatwright {
 
         public const int SPRITE_WIDTH = 12, SPRITE_HEIGHT = 13;
         public const int COLLISION_WIDTH = 13, COLLISION_HEIGHT = 14;
-        public const float MOVE_SPEED = 0.69f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -5.6f, COYOTE_TIME = 8, GUN_RECOIL = 0.56f;
+        public const float MOVE_SPEED = 0.69f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -5.6f, COYOTE_TIME = 8, GUN_RECOIL = 0.9f;
 
         public Vector2 SHOOT_RIGHT_OFFSET = new Vector2(9, 4), SHOOT_LEFT_OFFSET = new Vector2(-1, 4);
 
@@ -95,7 +95,9 @@ namespace eboatwright {
                     shootReleased = false;
                     animator.ChangeAnimation((int)ANIMATION_STATES.SHOOT, true);
                     velocity.X *= GUN_RECOIL;
-                    scene.AddGameObject(new Projectile(scene, true, !flipSprite, position + (flipSprite ? SHOOT_LEFT_OFFSET : SHOOT_RIGHT_OFFSET)));
+
+                    Vector2 shootPosition = position + (flipSprite ? SHOOT_LEFT_OFFSET : SHOOT_RIGHT_OFFSET);
+                    scene.AddGameObject(new Projectile(scene, true, !flipSprite, shootPosition));
                 }
             } else
                 shootReleased = true;
