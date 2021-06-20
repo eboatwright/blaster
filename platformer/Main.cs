@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -14,15 +15,20 @@ namespace eboatwright {
         private Scene currentScene;
 
         public static ContentManager content;
+        public static Random random;
+
+        private Color particleColor = new Color(120, 172, 187);
 
         public Main() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            content = Content;
             IsMouseVisible = true;
         }
 
         protected override void Initialize() {
+            content = Content;
+            random = new Random();
+
             graphics.PreferredBackBufferWidth = SCREEN_WIDTH * SCREEN_SCALE;
             graphics.PreferredBackBufferHeight = SCREEN_HEIGHT * SCREEN_SCALE;
             graphics.ApplyChanges();
@@ -45,7 +51,7 @@ namespace eboatwright {
                 Exit();
 
             currentScene.Update((float)gameTime.ElapsedGameTime.TotalSeconds * 60, Mouse.GetState(), Keyboard.GetState());
-
+            
             base.Update(gameTime);
         }
 

@@ -28,3 +28,4 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/obj/Debug/netcoreapp3.1/platformer.dll
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/obj/Debug/netcoreapp3.1/platformer.pdb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/obj/Debug/netcoreapp3.1/platformer.genruntimeconfig.cache
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/circleParticles.xnb

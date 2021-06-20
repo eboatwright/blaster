@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{8647CB98-C05D-4FD6-BB46-A126C9198EB4}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="src/gameObjects/Player.cs">
     <Files>
-      <File FileName="src/gameObjects/Player.cs" Line="34" Column="34" />
+      <File FileName="src/gameObjects/Player.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +11,9 @@
               <Node name="Content" expanded="True" />
               <Node name="src" expanded="True">
                 <Node name="engine" expanded="True" />
-                <Node name="gameObjects" expanded="True" />
+                <Node name="gameObjects" expanded="True">
+                  <Node name="Player.cs" selected="True" />
+                </Node>
                 <Node name="scenes" expanded="True" />
               </Node>
             </Node>

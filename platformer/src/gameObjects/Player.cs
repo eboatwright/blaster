@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 namespace eboatwright {
-    public class Player : GameObject {
+    public class Player : GameObject, IDamageable {
 
         enum ANIMATION_STATES {
             IDLE = 0,
@@ -33,6 +33,19 @@ namespace eboatwright {
 
         public Animator animator;
 
+
+
+        public int Health { get; set; }
+
+        public void Damage() {
+            Health--;
+            if(Health <= 0) {
+                Destroy();
+            }
+        }
+
+
+
         public Player(Scene scene) : base(scene) {}
 
         public override void Initialize() {
@@ -44,6 +57,7 @@ namespace eboatwright {
                 new Animation(new int[] { 5 }, 1f),
                 new Animation(new int[] { 6 }, 5f)
             });
+            Health = 3;
         }
 
         public override void LoadContent() {

@@ -4,6 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/circleParticles.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/enemyProjectile.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/enemyRover.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/gem.png</File>
@@ -14,6 +15,7 @@
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/sparkle.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>circleParticles.png</File>
     <File>enemyProjectile.png</File>
     <File>enemyRover.png</File>
     <File>gem.png</File>
