@@ -13,6 +13,8 @@ namespace eboatwright {
 
         public bool isPlayer, facingRight;
 
+        private Player player;
+
         private Animator animator = new Animator(new Animation[]{
             new Animation(new int[]{ 0, 1 }, 8f),
         });
@@ -27,6 +29,7 @@ namespace eboatwright {
 
         public override void Initialize() {
             xVelocity = MOVE_SPEED * (facingRight ? 1f : -1f);
+            player = (Player)scene.FindGameObjectWithTag("Player");
         }
 
         public override void LoadContent() {
@@ -47,10 +50,18 @@ namespace eboatwright {
                     }
             
 
-            foreach(Rover rover in scene.FindGameObjectsWithTag("Rover")) {
-                Rect RoverRect = new Rect(rover.position, Rover.SPRITE_WIDTH, Rover.SPRITE_HEIGHT);
-                if (projectileRect.Overlaps(RoverRect)) {
-                    rover.Damage();
+            if(isPlayer) {
+                foreach (Rover rover in scene.FindGameObjectsWithTag("Rover")) {
+                    Rect roverRect = new Rect(rover.position, Rover.SPRITE_WIDTH, Rover.SPRITE_HEIGHT);
+                    if (projectileRect.Overlaps(roverRect)) {
+                        rover.Damage();
+                        Destroy();
+                    }
+                }
+            } else if(player != null) {
+                Rect playerRect = new Rect(player.position, Player.SPRITE_WIDTH, Player.SPRITE_HEIGHT);
+                if(projectileRect.Overlaps(playerRect)) {
+                    player.Damage();
                     Destroy();
                 }
             }

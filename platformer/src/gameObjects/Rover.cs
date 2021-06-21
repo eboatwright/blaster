@@ -18,6 +18,8 @@ namespace eboatwright {
         public const int SPRITE_WIDTH = 18, SPRITE_HEIGHT = 16;
         public const int COLLISION_WIDTH = 19, COLLISION_HEIGHT = 17;
 
+        private Vector2 SHOOT_RIGHT_OFFSET = new Vector2(15, 8), SHOOT_LEFT_OFFSET = new Vector2(-2, 9);
+
         private int direction = 1;
 
         private Texture2D roverImg;
@@ -27,7 +29,8 @@ namespace eboatwright {
 
         private Vector2 velocity;
 
-        private SoundEffect hitSfx, explodeSfx;
+        private SoundEffect hitSfx, explodeSfx, shootSfx;
+        private float shootTime = 26f, shootTimer;
 
 
         public int Health { get; set; }
@@ -60,6 +63,7 @@ namespace eboatwright {
             roverImg = Main.content.Load<Texture2D>("enemyRover");
             hitSfx = Main.content.Load<SoundEffect>("sfx/hitEnemy");
             explodeSfx = Main.content.Load<SoundEffect>("sfx/enemyExplode");
+            shootSfx = Main.content.Load<SoundEffect>("sfx/shoot");
         }
 
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
@@ -106,6 +110,17 @@ namespace eboatwright {
                         }
                     }
                 }
+
+            if(shootTimer <= 0f) {
+                shootTimer = shootTime;
+                velocity.X *= GUN_RECOIL;
+
+                Vector2 shootPosition = position + (flipSprite ? SHOOT_LEFT_OFFSET : SHOOT_RIGHT_OFFSET);
+                scene.AddGameObject(new Projectile(scene, false, !flipSprite, shootPosition));
+
+                shootSfx.Play();
+            }
+            shootTimer -= deltaTime;
 
             animator.Update(deltaTime);
             flipSprite = direction < 0;

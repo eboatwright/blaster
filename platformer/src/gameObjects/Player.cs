@@ -31,12 +31,8 @@ namespace eboatwright {
         public Animator animator;
 
         private SoundEffect jumpSfx, shootSfx, footstepSfx;
-        private float footstepTime = 21f;
-        private float footstepTimer = 0f;
-
-        private float shootTime = 10f;
-        private float shootTimer = 0f;
-
+        private float footstepTime = 21f, footstepTimer;
+        private float shootTime = 10f, shootTimer;
 
 
         public int Health { get; set; }
@@ -46,7 +42,6 @@ namespace eboatwright {
             if(Health <= 0)
                 Destroy();
         }
-
 
 
         public Player(Scene scene) : base(scene) {}
