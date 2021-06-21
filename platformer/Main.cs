@@ -12,7 +12,7 @@ namespace eboatwright {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
-        private Scene currentScene;
+        public static Scene currentScene;
 
         public static ContentManager content;
         public static Random random;
@@ -33,8 +33,7 @@ namespace eboatwright {
             graphics.ApplyChanges();
             Window.Title = "Platformer - eboatwright";
 
-            currentScene = new GameScene();
-
+            currentScene = new SplashScene();
             currentScene.Initialize();
 
             base.Initialize();
@@ -55,7 +54,7 @@ namespace eboatwright {
         }
 
         protected override void Draw(GameTime gameTime) {
-            GraphicsDevice.Clear(Color.White);
+            GraphicsDevice.Clear(new Color(33, 44, 54));
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, Matrix.CreateScale(SCREEN_SCALE));
 

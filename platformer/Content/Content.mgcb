@@ -85,6 +85,18 @@
 /processorParam:TextureFormat=Color
 /build:../../../../GAME ASSETS/PlatformerAssets/levelTileset.png;levelTileset.png
 
+#begin ../../../../GAME ASSETS/PlatformerAssets/menu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../../GAME ASSETS/PlatformerAssets/menu.png;menu.png
+
 #begin ../../../../GAME ASSETS/PlatformerAssets/player.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -120,4 +132,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../../../../GAME ASSETS/PlatformerAssets/sparkle.png;sparkle.png
+
+#begin ../../../../GAME ASSETS/PlatformerAssets/splash.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../../GAME ASSETS/PlatformerAssets/splash.png;splash.png
 

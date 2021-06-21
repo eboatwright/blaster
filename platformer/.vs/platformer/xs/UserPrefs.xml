@@ -1,5 +1,9 @@
 ﻿<Properties StartupConfiguration="{8647CB98-C05D-4FD6-BB46-A126C9198EB4}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/gameObjects/SplashHandler.cs">
+    <Files>
+      <File FileName="src/gameObjects/MenuHandler.cs" Line="24" Column="18" />
+      <File FileName="src/gameObjects/SplashHandler.cs" Line="29" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -9,7 +13,7 @@
               <Node name="src" expanded="True">
                 <Node name="engine" expanded="True" />
                 <Node name="gameObjects" expanded="True">
-                  <Node name="Player.cs" selected="True" />
+                  <Node name="SplashHandler.cs" selected="True" />
                 </Node>
                 <Node name="scenes" expanded="True" />
               </Node>

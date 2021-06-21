@@ -1,0 +1,45 @@
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+
+namespace eboatwright {
+    public class MenuHandler : GameObject {
+
+        public Texture2D menuImg;
+        private float yPosition;
+        private float sinWaveTimer;
+        private bool xReleased;
+
+        public MenuHandler(Scene scene) : base(scene) {}
+
+        public override void Initialize() {}
+
+        public override void LoadContent() {
+            menuImg = Main.content.Load<Texture2D>("menu");
+        }
+
+        public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
+            if (keyboard.IsKeyDown(Keys.X)) {
+                if (xReleased) {
+                    xReleased = false;
+                    LoadScene();
+                }
+            } else
+                xReleased = true;
+
+            sinWaveTimer += deltaTime;
+            yPosition = (float)Math.Sin(sinWaveTimer / 20f) * 6f;
+        }
+
+        public override void Draw(SpriteBatch spriteBatch) {
+            spriteBatch.Draw(menuImg, new Vector2(0f, yPosition), Color.White);
+        }
+
+        public void LoadScene() {
+            Main.currentScene = new GameScene();
+            Main.currentScene.Initialize();
+            Main.currentScene.LoadContent();
+        }
+    }
+}

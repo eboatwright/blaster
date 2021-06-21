@@ -29,3 +29,5 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/obj/Debug/netcoreapp3.1/platformer.pdb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/obj/Debug/netcoreapp3.1/platformer.genruntimeconfig.cache
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/circleParticles.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/splash.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/menu.xnb

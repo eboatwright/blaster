@@ -13,15 +13,15 @@ namespace eboatwright {
             SHOOT = 3,
         }
 
-        public const int SPRITE_WIDTH = 12, SPRITE_HEIGHT = 13;
-        public const int COLLISION_WIDTH = 13, COLLISION_HEIGHT = 14;
-        public const float MOVE_SPEED = 0.69f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -5.6f, COYOTE_TIME = 8, GUN_RECOIL = 0.9f;
+        public const int SPRITE_WIDTH = 16, SPRITE_HEIGHT = 16;
+        public const int COLLISION_WIDTH = 17, COLLISION_HEIGHT = 17;
+        public const float MOVE_SPEED = 0.69f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -5.6f, COYOTE_TIME = 8, GUN_RECOIL = 0.8f;
 
-        public Vector2 SHOOT_RIGHT_OFFSET = new Vector2(9, 4), SHOOT_LEFT_OFFSET = new Vector2(-1, 4);
+        public Vector2 SHOOT_RIGHT_OFFSET = new Vector2(11, 5), SHOOT_LEFT_OFFSET = new Vector2(-1, 5);
 
         private bool jumpReleased, shootReleased;
         private float lastGrounded = 0f;
-
+        
         private Vector2 velocity;
 
         private Texture2D playerImg;
@@ -39,9 +39,8 @@ namespace eboatwright {
 
         public void Damage() {
             Health--;
-            if(Health <= 0) {
+            if(Health <= 0)
                 Destroy();
-            }
         }
 
 
@@ -53,9 +52,9 @@ namespace eboatwright {
             map = (Map)scene.FindGameObjectWithTag("Map");
             animator = new Animator(new Animation[]{
                 new Animation(new int[] { 0, 1 }, 10f),
-                new Animation(new int[] { 2, 3, 4, 3 }, 7.2f),
-                new Animation(new int[] { 5 }, 1f),
-                new Animation(new int[] { 6 }, 5f)
+                new Animation(new int[] { 3, 2 }, 7.2f),
+                new Animation(new int[] { 4 }, 1f),
+                new Animation(new int[] { 5 }, 7f)
             });
             Health = 3;
         }
@@ -150,7 +149,7 @@ namespace eboatwright {
                 camera = (Camera)scene.FindGameObjectWithTag("Camera");
                 return;
             }
-            spriteBatch.Draw(playerImg, position - camera.scroll, new Rectangle(animator.animationFrame * SPRITE_WIDTH, 0, 12, 13), Color.White, 0f, Vector2.Zero, 1f, (flipSprite ? SpriteEffects.FlipHorizontally : SpriteEffects.None), 0f);
+            spriteBatch.Draw(playerImg, position - camera.scroll, new Rectangle(animator.animationFrame * SPRITE_WIDTH, 0, SPRITE_WIDTH, SPRITE_HEIGHT), Color.White, 0f, Vector2.Zero, 1f, (flipSprite ? SpriteEffects.FlipHorizontally : SpriteEffects.None), 0f);
         }
     }
 }

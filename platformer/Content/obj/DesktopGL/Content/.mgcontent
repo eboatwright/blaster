@@ -10,9 +10,11 @@
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/gem.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/heart.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/levelTileset.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/menu.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/player.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/playerProjectile.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/sparkle.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/splash.png</File>
   </SourceFiles>
   <DestFiles>
     <File>circleParticles.png</File>
@@ -21,8 +23,10 @@
     <File>gem.png</File>
     <File>heart.png</File>
     <File>levelTileset.png</File>
+    <File>menu.png</File>
     <File>player.png</File>
     <File>playerProjectile.png</File>
     <File>sparkle.png</File>
+    <File>splash.png</File>
   </DestFiles>
 </SourceFileCollection>
