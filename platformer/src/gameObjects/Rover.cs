@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -13,44 +14,101 @@ namespace eboatwright {
         }
 
 
+        public const float MOVE_SPEED = 0.36f, FRICTION = 0.7f, GRAVITY = 0.34f, GUN_RECOIL = 0.7f;
         public const int SPRITE_WIDTH = 18, SPRITE_HEIGHT = 16;
+        public const int COLLISION_WIDTH = 19, COLLISION_HEIGHT = 17;
+
+        private int direction = 1;
 
         private Texture2D roverImg;
 
         private Animator animator;
         private bool flipSprite;
 
+        private Vector2 velocity;
+
+        private SoundEffect hitSfx, explodeSfx;
+
 
         public int Health { get; set; }
 
         public void Damage() {
             Health--;
-            if (Health <= 0)
+            if (Health <= 0) {
                 Destroy();
+                explodeSfx.Play();
+                return;
+            }
+            hitSfx.Play();
         }
 
 
-        public Rover(Scene scene) : base(scene) {
-            position = new Vector2(0, 64);
-        }
+        public Rover(Scene scene) : base(scene) {}
 
         public override void Initialize() {
             animator = new Animator(new Animation[]{
                 new Animation(new int[] { 0 }, 1f),
-                new Animation(new int[] { 1, 0 }, 10f),
+                new Animation(new int[] { 1, 0 }, 16f),
                 new Animation(new int[] { 2 }, 8f)
             });
             animator.ChangeAnimation((int)ANIMATION_STATES.WALK, false);
             AddTags(new string[]{ "Rover" });
-            Health = 3;
+            Health = 5;
         }
 
         public override void LoadContent() {
             roverImg = Main.content.Load<Texture2D>("enemyRover");
+            hitSfx = Main.content.Load<SoundEffect>("sfx/hitEnemy");
+            explodeSfx = Main.content.Load<SoundEffect>("sfx/enemyExplode");
         }
 
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
+            velocity.X += direction * MOVE_SPEED;
+
+            velocity.Y += GRAVITY * deltaTime;
+            position.Y += velocity.Y * deltaTime;
+
+            Rect roverRect = new Rect(position, COLLISION_WIDTH - 1, COLLISION_HEIGHT);
+
+            for (int y = 0; y <= Map.mapValues.GetUpperBound(0); y++)
+                for (int x = 0; x <= Map.mapValues.GetUpperBound(1); x++) {
+                    if (Map.mapValues[y, x] > 0 && Map.mapValues[y, x] < 14) {
+                        Rect TileRect = new Rect(x * Map.TILE_SIZE, y * Map.TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE);
+                        if (roverRect.Overlaps(TileRect)) {
+                            if (velocity.Y > 0f)
+                                position.Y = y * Map.TILE_SIZE - COLLISION_HEIGHT + 1;
+                            else if (velocity.Y < 0f)
+                                position.Y = y * Map.TILE_SIZE + Map.TILE_SIZE;
+                            velocity.Y = 0f;
+                        }
+                    }
+                }
+
+            velocity.X *= FRICTION;
+            position.X += velocity.X;
+
+            roverRect = new Rect(position, COLLISION_WIDTH, COLLISION_HEIGHT - 1);
+
+            for (int y = 0; y <= Map.mapValues.GetUpperBound(0); y++)
+                for (int x = 0; x <= Map.mapValues.GetUpperBound(1); x++) {
+                    if (Map.mapValues[y, x] > 0 && Map.mapValues[y, x] < 14) {
+                        Rect TileRect = new Rect(x * Map.TILE_SIZE, y * Map.TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE);
+                        if (roverRect.Overlaps(TileRect)) {
+                            if (velocity.X > 0f) {
+                                position.X = x * Map.TILE_SIZE - COLLISION_WIDTH + 1;
+                                direction = -1;
+                            }
+                            else if (velocity.X < 0f) {
+                                position.X = x * Map.TILE_SIZE + Map.TILE_SIZE;
+                                direction = 1;
+                            }
+                            velocity.X = 0f;
+                        }
+                    }
+                }
+
             animator.Update(deltaTime);
+            flipSprite = direction < 0;
         }
 
         public override void Draw(SpriteBatch spriteBatch) {

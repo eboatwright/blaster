@@ -31,3 +31,10 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/circleParticles.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/splash.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/menu.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/sfx/footstep.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/sfx/shoot.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/sfx/jump3.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/sfx/hitEnemy.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/sfx/enemyExplode.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/sfx/splash2.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/sfx/startGame.xnb

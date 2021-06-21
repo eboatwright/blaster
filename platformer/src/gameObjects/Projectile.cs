@@ -13,8 +13,6 @@ namespace eboatwright {
 
         public bool isPlayer, facingRight;
 
-        private Map map;
-
         private Animator animator = new Animator(new Animation[]{
             new Animation(new int[]{ 0, 1 }, 8f),
         });
@@ -40,16 +38,14 @@ namespace eboatwright {
 
             Rect projectileRect = new Rect((int)(position.X + xVelocity), (int)position.Y, WIDTH, HEIGHT);
 
-            if (map != null) {
-                for (int y = 0; y < map.mapValues.GetUpperBound(0); y++)
-                    for (int x = 0; x < map.mapValues.GetUpperBound(1); x++)
-                        if (map.mapValues[y, x] > 0) {
-                            Rect tileRect = new Rect(x * Map.TILE_SIZE, y * Map.TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE);
-                            if (projectileRect.Overlaps(tileRect))
-                                Destroy();
-                        }
-            } else
-                map = (Map)scene.FindGameObjectWithTag("Map");
+            for (int y = 0; y < Map.mapValues.GetUpperBound(0); y++)
+                for (int x = 0; x < Map.mapValues.GetUpperBound(1); x++)
+                    if (Map.mapValues[y, x] > 0) {
+                        Rect tileRect = new Rect(x * Map.TILE_SIZE, y * Map.TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE);
+                        if (projectileRect.Overlaps(tileRect))
+                            Destroy();
+                    }
+            
 
             foreach(Rover rover in scene.FindGameObjectsWithTag("Rover")) {
                 Rect RoverRect = new Rect(rover.position, Rover.SPRITE_WIDTH, Rover.SPRITE_HEIGHT);

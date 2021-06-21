@@ -7,7 +7,7 @@ namespace eboatwright {
 
         public const int TILE_SIZE = 16;
 
-        public int[,] mapValues, mapData;
+        public static int[,] mapValues;
 
         private Texture2D tilesetImg;
 

@@ -145,3 +145,45 @@
 /processorParam:TextureFormat=Color
 /build:../../../../GAME ASSETS/PlatformerAssets/splash.png;splash.png
 
+#begin sfx/enemyExplode.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx/enemyExplode.wav
+
+#begin sfx/footstep.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx/footstep.wav
+
+#begin sfx/hitEnemy.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx/hitEnemy.wav
+
+#begin sfx/jump3.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx/jump3.wav
+
+#begin sfx/shoot 2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx/shoot 2.wav;sfx/shoot.wav
+
+#begin sfx/splash2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx/splash2.wav
+
+#begin sfx/startGame.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx/startGame.wav
+

@@ -15,6 +15,13 @@
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/playerProjectile.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/sparkle.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/../../../../GAME ASSETS/PlatformerAssets/splash.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/sfx/enemyExplode.wav</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/sfx/footstep.wav</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/sfx/hitEnemy.wav</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/sfx/jump3.wav</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/sfx/shoot 2.wav</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/sfx/splash2.wav</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/Content/sfx/startGame.wav</File>
   </SourceFiles>
   <DestFiles>
     <File>circleParticles.png</File>
@@ -28,5 +35,12 @@
     <File>playerProjectile.png</File>
     <File>sparkle.png</File>
     <File>splash.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>sfx/shoot.wav</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
