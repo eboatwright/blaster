@@ -42,6 +42,14 @@ namespace eboatwright {
             return null;
         }
 
+        public List<GameObject> FindGameObjectsWithTag(string tag) {
+            List<GameObject> found = new List<GameObject>();
+            foreach (GameObject gameObject in gameObjects)
+                if (gameObject.tags.Contains(tag))
+                    found.Add(gameObject);
+            return found;
+        }
+
         public GameObject AddGameObject(GameObject newGameObject) {
             gameObjects.Add(newGameObject);
             return newGameObject;

@@ -26,7 +26,6 @@ namespace eboatwright {
 
         private Texture2D playerImg;
 
-        private Camera camera;
         private Map map;
 
         private bool flipSprite;
@@ -145,11 +144,8 @@ namespace eboatwright {
         }
 
         public override void Draw(SpriteBatch spriteBatch) {
-            if (camera == null) {
-                camera = (Camera)scene.FindGameObjectWithTag("Camera");
-                return;
-            }
-            spriteBatch.Draw(playerImg, position - camera.scroll, new Rectangle(animator.animationFrame * SPRITE_WIDTH, 0, SPRITE_WIDTH, SPRITE_HEIGHT), Color.White, 0f, Vector2.Zero, 1f, (flipSprite ? SpriteEffects.FlipHorizontally : SpriteEffects.None), 0f);
+            if (Main.camera == null) return;
+            spriteBatch.Draw(playerImg, position - Main.camera.scroll, new Rectangle(animator.animationFrame * SPRITE_WIDTH, 0, SPRITE_WIDTH, SPRITE_HEIGHT), Color.White, 0f, Vector2.Zero, 1f, (flipSprite ? SpriteEffects.FlipHorizontally : SpriteEffects.None), 0f);
         }
     }
 }

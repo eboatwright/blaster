@@ -1,4 +1,6 @@
-﻿namespace eboatwright {
+﻿using Microsoft.Xna.Framework;
+
+namespace eboatwright {
     public class Rect {
 
         public int x, y, width, height;
@@ -10,17 +12,29 @@
             this.width = width;
             this.height = height;
 
-            this.top = y;
-            this.bottom = y + height;
-            this.left = x;
-            this.right = x + width;
+            top = y;
+            bottom = y + height;
+            left = x;
+            right = x + width;
+        }
+
+        public Rect(Vector2 position, int width, int height) {
+            x = (int)position.X;
+            y = (int)position.Y;
+            this.width = width;
+            this.height = height;
+
+            top = y;
+            bottom = y + height;
+            left = x;
+            right = x + width;
         }
 
         public bool Overlaps(Rect other) {
-            return this.left < other.right &&
-                    this.right > other.left &&
-                    this.top < other.bottom &&
-                    this.bottom > other.top;
+            return left < other.right &&
+                    right > other.left &&
+                    top < other.bottom &&
+                    bottom > other.top;
         }
     }
 }

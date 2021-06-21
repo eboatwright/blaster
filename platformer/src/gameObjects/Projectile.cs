@@ -38,23 +38,33 @@ namespace eboatwright {
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
             position.X += xVelocity;
 
+            Rect projectileRect = new Rect((int)(position.X + xVelocity), (int)position.Y, WIDTH, HEIGHT);
+
             if (map != null) {
-                Rect ProjectileRect = new Rect((int)(position.X + xVelocity), (int)position.Y, WIDTH, HEIGHT);
                 for (int y = 0; y < map.mapValues.GetUpperBound(0); y++)
                     for (int x = 0; x < map.mapValues.GetUpperBound(1); x++)
                         if (map.mapValues[y, x] > 0) {
-                            Rect TileRect = new Rect(x * Map.TILE_SIZE, y * Map.TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE);
-                            if (ProjectileRect.Overlaps(TileRect))
+                            Rect tileRect = new Rect(x * Map.TILE_SIZE, y * Map.TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE);
+                            if (projectileRect.Overlaps(tileRect))
                                 Destroy();
                         }
             } else
                 map = (Map)scene.FindGameObjectWithTag("Map");
 
+            foreach(Rover rover in scene.FindGameObjectsWithTag("Rover")) {
+                Rect RoverRect = new Rect(rover.position, Rover.SPRITE_WIDTH, Rover.SPRITE_HEIGHT);
+                if (projectileRect.Overlaps(RoverRect)) {
+                    rover.Damage();
+                    Destroy();
+                }
+            }
+
             animator.Update(deltaTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch) {
-            spriteBatch.Draw(projectileImg, position, new Rectangle(animator.animationFrame * WIDTH, 0, WIDTH, HEIGHT), Color.White, 0f, Vector2.Zero, 1f, (facingRight ? SpriteEffects.None : SpriteEffects.FlipHorizontally), 0f);
+            if (Main.camera == null) return;
+            spriteBatch.Draw(projectileImg, position - Main.camera.scroll, new Rectangle(animator.animationFrame * WIDTH, 0, WIDTH, HEIGHT), Color.White, 0f, Vector2.Zero, 1f, (facingRight ? SpriteEffects.None : SpriteEffects.FlipHorizontally), 0f);
         }
     }
 }

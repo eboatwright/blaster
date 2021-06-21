@@ -13,10 +13,10 @@ namespace eboatwright {
         private SpriteBatch spriteBatch;
 
         public static Scene currentScene;
-
         public static ContentManager content;
         public static Random random;
         public static Color lightGreyColor = new Color(120, 172, 187);
+        public static Camera camera;
 
         public Main() {
             graphics = new GraphicsDeviceManager(this);
@@ -47,6 +47,8 @@ namespace eboatwright {
         protected override void Update(GameTime gameTime) {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            camera = (Camera)currentScene.FindGameObjectWithTag("Camera");
 
             currentScene.Update((float)gameTime.ElapsedGameTime.TotalSeconds * 60, Mouse.GetState(), Keyboard.GetState());
             

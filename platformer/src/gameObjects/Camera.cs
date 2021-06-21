@@ -7,10 +7,9 @@ namespace eboatwright {
 
         public Vector2 scroll;
         public Vector2 offset = new Vector2(1792, 1200);
-        private Player player;
 
         public Camera(Scene scene) : base(scene) {
-            scroll = new Vector2(0f, 0f);
+            scroll = Vector2.Zero;
         }
 
         public override void Initialize() {
@@ -19,12 +18,7 @@ namespace eboatwright {
 
         public override void LoadContent() {}
 
-        public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
-            if (player == null) {
-                player = (Player)scene.FindGameObjectWithTag("Player");
-                return;
-            }
-        }
+        public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {}
 
         public override void Draw(SpriteBatch spriteBatch) {}
     }

@@ -49,7 +49,8 @@ namespace eboatwright {
         }
 
         public override void Draw(SpriteBatch spriteBatch) {
-            spriteBatch.Draw(particleImg, position, new Rectangle(data.spriteIndex * WIDTH, 0, WIDTH, HEIGHT), data.color);
+            if (Main.camera == null) return;
+            spriteBatch.Draw(particleImg, position - Main.camera.scroll, new Rectangle(data.spriteIndex * WIDTH, 0, WIDTH, HEIGHT), data.color);
         }
     }
 }
