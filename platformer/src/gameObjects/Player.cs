@@ -118,8 +118,8 @@ namespace eboatwright {
             if (lastGrounded <= 0f && !animator.doingUninterruptableAnimation)
                 animator.ChangeAnimation((int)ANIMATION_STATES.JUMP);
 
-            if (keyboard.IsKeyDown(Keys.Z) && shootTimer <= 0f) {
-                if (shootReleased) {
+            if (keyboard.IsKeyDown(Keys.Z)) {
+                if (shootReleased && shootTimer <= 0f) {
                     shootTimer = shootTime;
                     shootReleased = false;
                     animator.ChangeAnimation((int)ANIMATION_STATES.SHOOT, true);
@@ -157,6 +157,9 @@ namespace eboatwright {
 
             velocity.X *= FRICTION;
             position.X += velocity.X;
+
+            if (position.X < Main.camera.mainScroll.X)
+                position.X = Main.camera.mainScroll.X;
 
             playerRect = new Rect(position, COLLISION_WIDTH, COLLISION_HEIGHT - 1);
 

@@ -41,3 +41,4 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/sfx/gameOver2.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/sfx/gemPickup.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/font.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/bin/Debug/netcoreapp3.1/Content/background.xnb
