@@ -17,6 +17,7 @@ namespace eboatwright {
         public static Random random;
         public static Color lightGreyColor = new Color(120, 172, 187);
         public static Camera camera;
+        public static SpriteFont font;
 
         public Main() {
             graphics = new GraphicsDeviceManager(this);
@@ -41,6 +42,7 @@ namespace eboatwright {
 
         protected override void LoadContent() {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            font = Content.Load<SpriteFont>("font");
             currentScene.LoadContent();
         }
 

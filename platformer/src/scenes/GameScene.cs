@@ -6,6 +6,7 @@
             AddGameObject(new Player(this));
             AddGameObject(new Camera(this));
             AddGameObject(new RespawnHandler(this));
+            AddGameObject(new ScoreCounter(this));
         }
     }
 }

@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{8647CB98-C05D-4FD6-BB46-A126C9198EB4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/gameObjects/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/gameObjects/ScoreCounter.cs">
     <Files>
-      <File FileName="src/gameObjects/Player.cs" Line="42" Column="27" />
+      <File FileName="src/gameObjects/ScoreCounter.cs" Line="23" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="platformer" expanded="True">
             <Node name="platformer" expanded="True">
+              <Node name="Content" expanded="True" />
               <Node name="src" expanded="True">
-                <Node name="engine" expanded="True" />
                 <Node name="gameObjects" expanded="True">
-                  <Node name="Player.cs" selected="True" />
+                  <Node name="ScoreCounter.cs" selected="True" />
                 </Node>
                 <Node name="scenes" expanded="True" />
               </Node>

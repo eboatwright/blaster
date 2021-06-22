@@ -40,6 +40,8 @@ namespace eboatwright {
 
             Health--;
             if (Health <= 0) {
+                ScoreCounter.score += 50;
+
                 Camera.Shake(2f);
                 Destroy();
                 explodeSfx.Play();
@@ -49,6 +51,8 @@ namespace eboatwright {
                     Vector2 particleVelocity = new Vector2((float)Main.random.NextDouble() * 3 - 1.5f, (float)Main.random.NextDouble() * 3 - 2.5f);
                     scene.AddGameObject(new Particle(scene, particlePosition, particleVelocity, 0.05f, 0.9f, 16f, new ParticleData[]{ new ParticleData(new Color(43, 73, 90), 1f, 0), new ParticleData(new Color(43, 73, 90), 0.5f, 2) }));
                 }
+
+                scene.AddGameObject(new Gem(scene, position + new Vector2(SPRITE_WIDTH / 2, SPRITE_HEIGHT / 2) + new Vector2((float)Main.random.NextDouble() * 10f - 5f, (float)Main.random.NextDouble() * 10f - 5f)));
 
                 return;
             }

@@ -145,6 +145,13 @@
 /processorParam:TextureFormat=Color
 /build:../../../../GAME ASSETS/PlatformerAssets/splash.png;splash.png
 
+#begin font.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:font.spritefont
+
 #begin sfx/enemyExplode.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -162,6 +169,12 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:sfx/gameOver2.wav
+
+#begin sfx/gemPickup.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx/gemPickup.wav
 
 #begin sfx/hitEnemy.wav
 /importer:WavImporter
