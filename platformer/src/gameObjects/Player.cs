@@ -15,7 +15,7 @@ namespace eboatwright {
 
         public const int SPRITE_WIDTH = 16, SPRITE_HEIGHT = 16;
         public const int COLLISION_WIDTH = 17, COLLISION_HEIGHT = 17;
-        public const float MOVE_SPEED = 0.69f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -5.6f, COYOTE_TIME = 8, GUN_RECOIL = 0.7f;
+        public const float MOVE_SPEED = 0.69f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -5.6f, COYOTE_TIME = 8, GUN_RECOIL = 0.6f;
 
         private Vector2 SHOOT_RIGHT_OFFSET = new Vector2(11, 5), SHOOT_LEFT_OFFSET = new Vector2(-1, 5);
 
@@ -33,7 +33,7 @@ namespace eboatwright {
 
         private SoundEffect jumpSfx, shootSfx, footstepSfx;
         private float footstepTime = 21f, footstepTimer;
-        private float shootTime = 10f, shootTimer;
+        private float shootTime = 12f, shootTimer;
 
 
         public int Health { get; set; }

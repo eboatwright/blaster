@@ -30,7 +30,7 @@ namespace eboatwright {
         private Vector2 velocity;
 
         private SoundEffect hitSfx, explodeSfx, shootSfx;
-        private float shootTime = 26f, shootTimer;
+        private float shootTime = 30f, shootTimer;
 
 
         public int Health { get; set; }

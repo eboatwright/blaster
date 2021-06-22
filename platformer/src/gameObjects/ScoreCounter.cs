@@ -25,7 +25,7 @@ namespace eboatwright {
 
             string scoreText = "";
             for (int i = 0; i < digits; i++) scoreText += "0";
-            spriteBatch.DrawString(Main.font, "SCORE: " + scoreText + score, new Vector2(170, 1), new Color(121, 169, 189));
+            spriteBatch.DrawString(Main.font, "SCORE: " + scoreText + score, new Vector2(175, -1), new Color(121, 169, 189));
         }
     }
 }

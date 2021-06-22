@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 namespace eboatwright {
     public class Projectile : GameObject {
 
-        private const float MOVE_SPEED = 4;
+        private const float MOVE_SPEED = 3.5f;
         private const int WIDTH = 5, HEIGHT = 2;
         private float xVelocity;
 
@@ -16,7 +16,7 @@ namespace eboatwright {
         private Player player;
 
         private Animator animator = new Animator(new Animation[]{
-            new Animation(new int[]{ 0, 1 }, 8f),
+            new Animation(new int[]{ 0, 1 }, 5f),
         });
 
         public Projectile(Scene scene, bool isPlayer, bool facingRight, Vector2 position) : base(scene) {
