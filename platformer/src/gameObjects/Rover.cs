@@ -87,12 +87,16 @@ namespace eboatwright {
         }
 
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
+            Rect roverRect = new Rect(position, COLLISION_WIDTH, COLLISION_HEIGHT);
+            Rect screenRect = new Rect(Main.camera.smoothedScroll, 240, 150);
+            if (!roverRect.Overlaps(screenRect)) return;
+
             velocity.X += direction * MOVE_SPEED;
 
             velocity.Y += GRAVITY * deltaTime;
             position.Y += velocity.Y * deltaTime;
 
-            Rect roverRect = new Rect(position, COLLISION_WIDTH - 1, COLLISION_HEIGHT);
+            roverRect = new Rect(position, COLLISION_WIDTH - 1, COLLISION_HEIGHT);
 
             for (int y = 0; y <= Map.mapValues.GetUpperBound(0); y++)
                 for (int x = 0; x <= Map.mapValues.GetUpperBound(1); x++) {
