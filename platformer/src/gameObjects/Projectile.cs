@@ -43,7 +43,7 @@ namespace eboatwright {
 
             for (int y = 0; y < Map.mapValues.GetUpperBound(0); y++)
                 for (int x = 0; x < Map.mapValues.GetUpperBound(1); x++)
-                    if (Map.mapValues[y, x] > 0) {
+                    if (Map.mapValues[y, x] > 0 && Map.mapValues[y, x] < 14) {
                         Rect tileRect = new Rect(x * Map.TILE_SIZE, y * Map.TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE);
                         if (projectileRect.Overlaps(tileRect))
                             Destroy();

@@ -157,6 +157,12 @@
 /processorParam:Quality=Best
 /build:sfx/footstep.wav
 
+#begin sfx/gameOver2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx/gameOver2.wav
+
 #begin sfx/hitEnemy.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor

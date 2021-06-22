@@ -12,7 +12,7 @@ namespace eboatwright {
         }
 
         public void Initialize() {
-            foreach (GameObject gameObject in gameObjects)
+            foreach (GameObject gameObject in gameObjects.ToArray())
                 gameObject.Initialize();
         }
 

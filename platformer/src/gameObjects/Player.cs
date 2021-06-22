@@ -29,6 +29,7 @@ namespace eboatwright {
         private bool flipSprite;
 
         public Animator animator;
+        private PlayerHealthBar healthBar;
 
         private SoundEffect jumpSfx, shootSfx, footstepSfx;
         private float footstepTime = 21f, footstepTimer;
@@ -39,8 +40,25 @@ namespace eboatwright {
 
         public void Damage() {
             Health--;
-            if(Health <= 0)
+            healthBar.health = Health;
+            if (Health <= 0) {
+                RespawnHandler.Respawn();
                 Destroy();
+
+                for (int i = 0; i < 3; i++) {
+                    Vector2 particlePosition = position + new Vector2(SPRITE_WIDTH / 2, SPRITE_HEIGHT / 2) + new Vector2((float)Main.random.NextDouble() * 10f - 5f, (float)Main.random.NextDouble() * 10f - 5f);
+                    Vector2 particleVelocity = new Vector2((float)Main.random.NextDouble() * 3 - 1.5f, (float)Main.random.NextDouble() * 3 - 2.5f);
+                    scene.AddGameObject(new Particle(scene, particlePosition, particleVelocity, 0.05f, 0.9f, 16f, new ParticleData[] { new ParticleData(new Color(46, 96, 182), 1f, 0), new ParticleData(new Color(46, 96, 182), 0.5f, 2) }));
+                }
+
+                return;
+            }
+
+            for (int i = 0; i < 1; i++) {
+                Vector2 particlePosition = position + new Vector2(SPRITE_WIDTH / 2, SPRITE_HEIGHT / 2) + new Vector2((float)Main.random.NextDouble() * 10f - 5f, (float)Main.random.NextDouble() * 10f - 5f);
+                Vector2 particleVelocity = new Vector2((float)Main.random.NextDouble() * 3 - 1.5f, (float)Main.random.NextDouble() * 3 - 2.5f);
+                scene.AddGameObject(new Particle(scene, particlePosition, particleVelocity, 0.05f, 0.9f, 16f, new ParticleData[] { new ParticleData(new Color(255, 255, 255), 1f, 0), new ParticleData(new Color(255, 255, 255), 0.5f, 2) }));
+            }
         }
 
 
@@ -54,7 +72,10 @@ namespace eboatwright {
                 new Animation(new int[] { 4 }, 1f),
                 new Animation(new int[] { 5 }, 7f)
             });
-            Health = 3;
+            healthBar = (PlayerHealthBar)scene.AddGameObject(new PlayerHealthBar(scene));
+            Health = healthBar.health = 3;
+
+            position = new Vector2(16, 64);
         }
 
         public override void LoadContent() {
@@ -64,8 +85,7 @@ namespace eboatwright {
             footstepSfx = Main.content.Load<SoundEffect>("sfx/footstep");
         }
 
-        public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
-            float xInput = 0f;
+        public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {float xInput = 0f;
             if (keyboard.IsKeyDown(Keys.Left)) {
                 velocity.X -= MOVE_SPEED * deltaTime;
                 if (!animator.doingUninterruptableAnimation) animator.ChangeAnimation((int)ANIMATION_STATES.WALK);

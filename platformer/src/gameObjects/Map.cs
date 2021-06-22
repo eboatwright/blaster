@@ -21,13 +21,24 @@ namespace eboatwright {
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,0,0,0,0,1,2,3,0,0,0,0,0,0},
                 {2,2,3,0,0,0,7,8,9,0,0,0,1,2,2},
-                {5,5,6,0,0,0,0,0,0,0,0,0,4,5,5},
+                {5,5,6,0,0,0,15,0,0,0,0,0,4,5,5},
                 {5,5,10,2,2,2,2,2,2,2,2,2,11,5,5},
                 {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5},
                 {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}
             };
 
             AddTags(new string[]{ "Map" });
+
+            for(int y = 0; y < mapValues.GetUpperBound(0); y++)
+                for(int x = 0; x < mapValues.GetUpperBound(1); x++) {
+                    Vector2 spawnPosition = new Vector2(x * TILE_SIZE, y * TILE_SIZE);
+                    if (mapValues[y, x] == 15) {
+                        Rover newRover = (Rover)scene.AddGameObject(new Rover(scene));
+                        newRover.position = spawnPosition;
+                        newRover.Initialize();
+                        newRover.LoadContent();
+                    }
+                }
         }
 
         public override void LoadContent() {

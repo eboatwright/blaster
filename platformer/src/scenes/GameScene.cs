@@ -4,8 +4,8 @@
         public GameScene() {
             AddGameObject(new Map(this));
             AddGameObject(new Player(this));
-            AddGameObject(new Rover(this));
             AddGameObject(new Camera(this));
+            AddGameObject(new RespawnHandler(this));
         }
     }
 }
