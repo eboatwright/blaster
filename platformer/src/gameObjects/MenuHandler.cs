@@ -31,6 +31,7 @@ namespace eboatwright {
                 if (keyboard.IsKeyDown(Keys.X)) {
                     if (xReleased) {
                         xReleased = false;
+                        Camera.Shake(5f);
                         startSfx.Play();
                         start = true;
                     }
@@ -47,7 +48,8 @@ namespace eboatwright {
         }
 
         public override void Draw(SpriteBatch spriteBatch) {
-            spriteBatch.Draw(menuImg, new Vector2(0f, yPosition), Color.White);
+            if (Main.camera == null) return;
+            spriteBatch.Draw(menuImg, new Vector2(0f, yPosition) - Main.camera.scroll, Color.White);
         }
 
         public void LoadScene() {

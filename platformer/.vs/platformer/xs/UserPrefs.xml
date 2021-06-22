@@ -1,8 +1,7 @@
 ﻿<Properties StartupConfiguration="{8647CB98-C05D-4FD6-BB46-A126C9198EB4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/gameObjects/Rover.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/gameObjects/Player.cs">
     <Files>
-      <File FileName="src/gameObjects/Rover.cs" Line="53" Column="1" />
-      <File FileName="src/gameObjects/Player.cs" Line="47" Column="24" />
+      <File FileName="src/gameObjects/Player.cs" Line="42" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +11,7 @@
               <Node name="src" expanded="True">
                 <Node name="engine" expanded="True" />
                 <Node name="gameObjects" expanded="True">
-                  <Node name="Rover.cs" selected="True" />
+                  <Node name="Player.cs" selected="True" />
                 </Node>
                 <Node name="scenes" expanded="True" />
               </Node>

@@ -39,9 +39,13 @@ namespace eboatwright {
         public int Health { get; set; }
 
         public void Damage() {
+            Camera.Shake(2f);
+
             Health--;
             healthBar.health = Health;
             if (Health <= 0) {
+                Camera.Shake(2f);
+
                 RespawnHandler.Respawn();
                 Destroy();
 

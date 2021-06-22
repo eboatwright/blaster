@@ -36,8 +36,11 @@ namespace eboatwright {
         public int Health { get; set; }
 
         public void Damage() {
+            Camera.Shake(2f);
+
             Health--;
             if (Health <= 0) {
+                Camera.Shake(2f);
                 Destroy();
                 explodeSfx.Play();
 
