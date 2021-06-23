@@ -86,3 +86,10 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/obj/Debug/netcoreapp3.1/platformer.dll
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/obj/Debug/netcoreapp3.1/platformer.pdb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/obj/Debug/netcoreapp3.1/platformer.genruntimeconfig.cache
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/boss/boss.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/boss/bossProjectile.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/boss/bossExplode.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/sfx/playerHit.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/music/likeclockwork.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/music/robotdance.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/music/space.xnb

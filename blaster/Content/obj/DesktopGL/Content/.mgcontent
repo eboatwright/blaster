@@ -4,7 +4,11 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PICOSoundLibrary/bossExplode.wav</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PICOSoundLibrary/playerHit.wav</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PlatformerAssets/background.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PlatformerAssets/boss.png</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PlatformerAssets/bossProjectile.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PlatformerAssets/circleParticles.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PlatformerAssets/enemyProjectile.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PlatformerAssets/enemyRover.png</File>
@@ -17,6 +21,9 @@
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PlatformerAssets/sparkle.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PlatformerAssets/splash.png</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/font.spritefont</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/music/likeclockwork.wav</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/music/robotdance.wav</File>
+    <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/music/space.wav</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/sfx/enemyExplode.wav</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/sfx/footstep.wav</File>
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/sfx/gameOver2.wav</File>
@@ -28,7 +35,11 @@
     <File>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/sfx/startGame.wav</File>
   </SourceFiles>
   <DestFiles>
+    <File>boss/bossExplode.wav</File>
+    <File>sfx/playerHit.wav</File>
     <File>background.png</File>
+    <File>boss/boss.png</File>
+    <File>boss/bossProjectile.png</File>
     <File>circleParticles.png</File>
     <File>enemyProjectile.png</File>
     <File>enemyRover.png</File>
@@ -40,6 +51,9 @@
     <File>playerProjectile.png</File>
     <File>sparkle.png</File>
     <File>splash.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

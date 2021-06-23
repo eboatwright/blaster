@@ -35,7 +35,7 @@ namespace eboatwright {
             Rect playerRect = new Rect(player.position + new Vector2(4, 4), 8, 12);
 
             if (gemRect.Overlaps(playerRect)) {
-                ScoreCounter.score += 50;
+                ScoreCounter.score += 25;
                 pickupSfx.Play();
 
                 for (int i = 0; i < 2; i++) {

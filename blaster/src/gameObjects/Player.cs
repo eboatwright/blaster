@@ -31,7 +31,7 @@ namespace eboatwright {
         public Animator animator;
         private PlayerHealthBar healthBar;
 
-        private SoundEffect jumpSfx, shootSfx, footstepSfx;
+        private SoundEffect jumpSfx, shootSfx, footstepSfx, hitSfx;
         private float footstepTime = 21f, footstepTimer;
         private float shootTime = 12f, shootTimer;
 
@@ -44,6 +44,8 @@ namespace eboatwright {
             Health--;
             healthBar.health = Health;
             if (Health <= 0) {
+                Main.currentSong.Stop();
+
                 Camera.Shake(2f);
 
                 RespawnHandler.Respawn();
@@ -57,6 +59,7 @@ namespace eboatwright {
 
                 return;
             }
+            hitSfx.Play();
 
             for (int i = 0; i < 1; i++) {
                 Vector2 particlePosition = position + new Vector2(SPRITE_WIDTH / 2, SPRITE_HEIGHT / 2) + new Vector2((float)Main.random.NextDouble() * 10f - 5f, (float)Main.random.NextDouble() * 10f - 5f);
@@ -77,7 +80,7 @@ namespace eboatwright {
                 new Animation(new int[] { 5 }, 7f)
             });
             healthBar = (PlayerHealthBar)scene.AddGameObject(new PlayerHealthBar(scene));
-            Health = healthBar.health = 3;
+            Health = healthBar.health = 20;
 
             position = new Vector2(16, 64);
         }
@@ -87,6 +90,7 @@ namespace eboatwright {
             jumpSfx = Main.content.Load<SoundEffect>("sfx/jump3");
             shootSfx = Main.content.Load<SoundEffect>("sfx/shoot");
             footstepSfx = Main.content.Load<SoundEffect>("sfx/footstep");
+            hitSfx = Main.content.Load<SoundEffect>("sfx/playerHit");
         }
 
         private bool cheatReleased;

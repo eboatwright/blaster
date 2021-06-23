@@ -13,6 +13,18 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin ../../../../GAME ASSETS/PICOSoundLibrary/bossExplode.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:../../../../GAME ASSETS/PICOSoundLibrary/bossExplode.wav;boss/bossExplode.wav
+
+#begin ../../../../GAME ASSETS/PICOSoundLibrary/playerHit.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:../../../../GAME ASSETS/PICOSoundLibrary/playerHit.wav;sfx/playerHit.wav
+
 #begin ../../../../GAME ASSETS/PlatformerAssets/background.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -24,6 +36,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../../../../GAME ASSETS/PlatformerAssets/background.png;background.png
+
+#begin ../../../../GAME ASSETS/PlatformerAssets/boss.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../../GAME ASSETS/PlatformerAssets/boss.png;boss/boss.png
+
+#begin ../../../../GAME ASSETS/PlatformerAssets/bossProjectile.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../../GAME ASSETS/PlatformerAssets/bossProjectile.png;boss/bossProjectile.png
 
 #begin ../../../../GAME ASSETS/PlatformerAssets/circleParticles.png
 /importer:TextureImporter
@@ -163,6 +199,24 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:font.spritefont
+
+#begin music/likeclockwork.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:music/likeclockwork.wav
+
+#begin music/robotdance.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:music/robotdance.wav
+
+#begin music/space.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:music/space.wav
 
 #begin sfx/enemyExplode.wav
 /importer:WavImporter

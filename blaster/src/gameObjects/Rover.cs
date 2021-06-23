@@ -8,9 +8,8 @@ namespace eboatwright {
 
 
         enum ANIMATION_STATES {
-            IDLE = 0,
-            WALK = 1,
-            SHOOT = 2
+            WALK = 0,
+            SHOOT = 1
         }
 
 
@@ -40,7 +39,7 @@ namespace eboatwright {
 
             Health--;
             if (Health <= 0) {
-                ScoreCounter.score += 50;
+                ScoreCounter.score += 25;
 
                 Camera.Shake(2f);
                 Destroy();
@@ -70,9 +69,8 @@ namespace eboatwright {
 
         public override void Initialize() {
             animator = new Animator(new Animation[]{
-                new Animation(new int[] { 0 }, 1f),
                 new Animation(new int[] { 1, 0 }, 16f),
-                new Animation(new int[] { 2 }, 8f)
+                new Animation(new int[] { 2 }, 8f),
             });
             animator.ChangeAnimation((int)ANIMATION_STATES.WALK, false);
             AddTags(new string[]{ "Rover" });

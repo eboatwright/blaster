@@ -34,6 +34,7 @@ namespace eboatwright {
                         Camera.Shake(5f);
                         startSfx.Play();
                         start = true;
+                        Main.currentSong.Stop();
                     }
                 } else
                     xReleased = true;

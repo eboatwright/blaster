@@ -1,8 +1,10 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace eboatwright {
     public class Main : Game {
@@ -18,6 +20,7 @@ namespace eboatwright {
         public static Color lightGreyColor = new Color(120, 172, 187);
         public static Camera camera;
         public static SpriteFont font;
+        public static SoundEffectInstance menuSong, gameSong, bossSong, currentSong;
 
         public Main() {
             graphics = new GraphicsDeviceManager(this);
@@ -32,7 +35,7 @@ namespace eboatwright {
             graphics.PreferredBackBufferWidth = SCREEN_WIDTH * SCREEN_SCALE;
             graphics.PreferredBackBufferHeight = SCREEN_HEIGHT * SCREEN_SCALE;
             graphics.ApplyChanges();
-            Window.Title = "Platformer - eboatwright";
+            Window.Title = "Blaster - eboatwright";
 
             currentScene = new SplashScene();
             currentScene.Initialize();
@@ -43,6 +46,9 @@ namespace eboatwright {
         protected override void LoadContent() {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("font");
+            menuSong = Content.Load<SoundEffect>("music/space").CreateInstance();
+            gameSong = Content.Load<SoundEffect>("music/robotdance").CreateInstance();
+            bossSong = Content.Load<SoundEffect>("music/likeclockwork").CreateInstance();
             currentScene.LoadContent();
         }
 

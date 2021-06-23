@@ -22,7 +22,7 @@ namespace eboatwright {
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {}
 
         public override void Draw(SpriteBatch spriteBatch) {
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < 4; i++)
                 spriteBatch.Draw(heartImg, new Vector2(5 + (i * (SPRITE_WIDTH + 1)), 5), new Rectangle((i < health ? 0 : SPRITE_WIDTH), 0, SPRITE_WIDTH, SPRITE_HEIGHT), Color.White);
         }
     }

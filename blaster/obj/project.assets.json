@@ -55,31 +55,6 @@
           }
         }
       }
-    },
-    ".NETCoreApp,Version=v3.1/win-x64": {
-      "MonoGame.Content.Builder.Task/3.8.0.1641": {
-        "type": "package",
-        "build": {
-          "build/MonoGame.Content.Builder.Task.props": {},
-          "build/MonoGame.Content.Builder.Task.targets": {}
-        }
-      },
-      "MonoGame.Framework.DesktopGL/3.8.0.1641": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/MonoGame.Framework.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MonoGame.Framework.dll": {}
-        },
-        "native": {
-          "runtimes/win-x64/native/SDL2.dll": {},
-          "runtimes/win-x64/native/soft_oal.dll": {}
-        },
-        "build": {
-          "build/MonoGame.Framework.DesktopGL.targets": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -215,7 +190,7 @@
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/evanboatwright/.nuget/NuGet/NuGet.Config"
+        "/Users/evanboatwright/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -258,31 +233,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[3.1.16, 3.1.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.16, 3.1.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[3.1.16, 3.1.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
       }
     }
   }

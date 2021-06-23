@@ -14,6 +14,7 @@ namespace eboatwright {
         public bool isPlayer, facingRight;
 
         private Player player;
+        private Boss boss;
 
         private Animator animator = new Animator(new Animation[]{
             new Animation(new int[]{ 0, 1 }, 5f),
@@ -58,6 +59,14 @@ namespace eboatwright {
                         Destroy();
                     }
                 }
+                if (boss != null) {
+                    Rect bossRect = new Rect(boss.position, Boss.SPRITE_WIDTH, Boss.SPRITE_HEIGHT);
+                    if(projectileRect.Overlaps(bossRect)) {
+                        boss.Damage();
+                        Destroy();
+                    }
+                } else
+                    boss = (Boss)scene.FindGameObjectWithTag("Boss");
             } else if(player != null) {
                 Rect playerRect = new Rect(player.position, Player.SPRITE_WIDTH, Player.SPRITE_HEIGHT);
                 if(projectileRect.Overlaps(playerRect)) {
