@@ -119,7 +119,7 @@ namespace eboatwright {
 
             for (int y = 0; y <= Map.mapValues.GetUpperBound(0); y++)
                 for (int x = 0; x <= Map.mapValues.GetUpperBound(1); x++) {
-                    if (Map.mapValues[y, x] > 0 && Map.mapValues[y, x] < 14) {
+                    if ((Map.mapValues[y, x] > 0 && Map.mapValues[y, x] < 14) || (Map.mapValues[y, x] == 16)) {
                         Rect TileRect = new Rect(x * Map.TILE_SIZE, y * Map.TILE_SIZE, Map.TILE_SIZE, Map.TILE_SIZE);
                         if (roverRect.Overlaps(TileRect)) {
                             if (velocity.X > 0f) {

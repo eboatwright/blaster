@@ -30,10 +30,11 @@ namespace eboatwright {
         }
 
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
+            if (player == null) return;
             Rect gemRect = new Rect(position, SPRITE_WIDTH, SPRITE_HEIGHT);
             Rect playerRect = new Rect(player.position + new Vector2(4, 4), 8, 12);
 
-            if(gemRect.Overlaps(playerRect)) {
+            if (gemRect.Overlaps(playerRect)) {
                 ScoreCounter.score += 50;
                 pickupSfx.Play();
 
