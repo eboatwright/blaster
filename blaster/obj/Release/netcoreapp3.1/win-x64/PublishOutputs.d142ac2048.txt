@@ -1,6 +1,13 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/platformer.exe
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/background.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/blackScreen.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/boss/boss.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/boss/bossExplode.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/boss/bossProjectile.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/boss/shockwave.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/boss/shockwaveImg.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/circleParticles.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/end.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/enemyProjectile.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/enemyRover.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/font.xnb
@@ -8,6 +15,9 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/heart.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/levelTileset.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/menu.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/music/likeclockwork.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/music/robotdance.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/music/space.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/player.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/playerProjectile.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/sfx/enemyExplode.xnb
@@ -16,6 +26,7 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/sfx/gemPickup.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/sfx/hitEnemy.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/sfx/jump3.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/sfx/playerHit.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/sfx/shoot.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/sfx/splash2.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/publish/Content/sfx/startGame.xnb

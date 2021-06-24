@@ -516,3 +516,14 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/obj/Release/netcoreapp3.1/win-x64/platformer.dll
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/obj/Release/netcoreapp3.1/win-x64/platformer.pdb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/obj/Release/netcoreapp3.1/win-x64/platformer.genruntimeconfig.cache
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/blackScreen.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/boss/boss.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/boss/bossExplode.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/boss/bossProjectile.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/boss/shockwave.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/boss/shockwaveImg.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/end.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/music/likeclockwork.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/music/robotdance.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/music/space.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Release/netcoreapp3.1/win-x64/Content/sfx/playerHit.xnb
