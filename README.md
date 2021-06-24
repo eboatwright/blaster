@@ -1,2 +1,5 @@
 # Blaster
-A game I'm making to get familiar with C# and Monogame. :)
+A game I made to get familiar with C# and Monogame. :)
+
+Game Download:
+ - eboatwright.itch.io/blaster
