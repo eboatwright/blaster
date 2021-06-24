@@ -38,6 +38,9 @@ namespace eboatwright {
         }
 
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
+            if(Main.camera != null)
+                if (position.X < Main.camera.mainScroll.X || position.X > Main.camera.mainScroll.X + 240) Destroy();
+
             position.X += xVelocity;
 
             Rect projectileRect = new Rect((int)(position.X + xVelocity), (int)position.Y, WIDTH, HEIGHT);

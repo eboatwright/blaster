@@ -43,6 +43,18 @@
 /processorParam:TextureFormat=Color
 /build:../../../../GAME ASSETS/PlatformerAssets/background.png;background.png
 
+#begin ../../../../GAME ASSETS/PlatformerAssets/blackScreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../../GAME ASSETS/PlatformerAssets/blackScreen.png;blackScreen.png
+
 #begin ../../../../GAME ASSETS/PlatformerAssets/boss.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -78,6 +90,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../../../../GAME ASSETS/PlatformerAssets/circleParticles.png;circleParticles.png
+
+#begin ../../../../GAME ASSETS/PlatformerAssets/end.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../../GAME ASSETS/PlatformerAssets/end.png;end.png
 
 #begin ../../../../GAME ASSETS/PlatformerAssets/enemyProjectile.png
 /importer:TextureImporter

@@ -49,7 +49,6 @@ namespace eboatwright {
                 ScoreCounter.score += 1000;
 
                 Camera.Shake(12f);
-                Destroy();
                 explodeSfx.Play();
 
                 for (int i = 0; i < 26; i++) {
@@ -61,6 +60,12 @@ namespace eboatwright {
                 for(int i = 0; i < 10; i++)
                     scene.AddGameObject(new Gem(scene, position + new Vector2(SPRITE_WIDTH / 2, SPRITE_HEIGHT / 2) + new Vector2((float)Main.random.NextDouble() * 24f - 12f, (float)Main.random.NextDouble() * 16f - 8f)));
 
+                Map.mapValues[4, 179] = 7;
+                Map.mapValues[8, 179] = 2;
+                for (int y = 5; y < 8; y++)
+                    Map.mapValues[y, 179] = 0;
+
+                Destroy();
                 return;
             }
             hitSfx.Play();
@@ -109,8 +114,8 @@ namespace eboatwright {
             player = (Player)scene.FindGameObjectWithTag("Player");
             if(player != null) {
                 if (shockwaveCooldown <= 0f) {
-                    shockwaveCooldown = 24f;
-                    if (Vector2.Distance(position, player.position) <= 28f)
+                    shockwaveCooldown = 10f;
+                    if (Vector2.Distance(position, player.position) <= 25f)
                         scene.AddGameObject(new Shockwave(scene));
                 } else
                     shockwaveCooldown -= deltaTime;

@@ -22,7 +22,7 @@ namespace eboatwright {
         private bool jumpReleased, jumpJustReleased, shootReleased;
         private float lastGrounded = 0f;
         
-        private Vector2 velocity;
+        public Vector2 velocity;
 
         private Texture2D playerImg;
 
@@ -93,17 +93,10 @@ namespace eboatwright {
             hitSfx = Main.content.Load<SoundEffect>("sfx/playerHit");
         }
 
-        private bool cheatReleased;
+        public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
+            if (EndingHandler.showEndScreen) return;
 
-        public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {float xInput = 0f;
-            if(keyboard.IsKeyDown(Keys.Space)) {
-                if (cheatReleased) {
-                    cheatReleased = false;
-                    position.X += 240 * 11;
-                }
-            } else
-                cheatReleased = true;
-
+            float xInput = 0f;
             if (keyboard.IsKeyDown(Keys.Left)) {
                 velocity.X -= MOVE_SPEED * deltaTime;
                 if (!animator.doingUninterruptableAnimation) animator.ChangeAnimation((int)ANIMATION_STATES.WALK);

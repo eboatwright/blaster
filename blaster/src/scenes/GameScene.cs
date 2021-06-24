@@ -14,6 +14,7 @@ namespace eboatwright {
             AddGameObject(new Camera(this));
             AddGameObject(new RespawnHandler(this));
             AddGameObject(new ScoreCounter(this));
+            AddGameObject(new EndingHandler(this));
 
             Main.currentSong = Main.gameSong;
             Main.currentSong.Play();

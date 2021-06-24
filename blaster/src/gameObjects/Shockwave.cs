@@ -13,6 +13,7 @@ namespace eboatwright {
 
         private Animator animator;
         private Boss boss;
+        private Player player;
 
         public Shockwave(Scene scene) : base(scene) {
             Initialize();
@@ -37,6 +38,18 @@ namespace eboatwright {
                 return;
             }
             position = scene.FindGameObjectWithTag("Boss").position - Vector2.One * 2;
+
+            player = (Player)scene.FindGameObjectWithTag("Player");
+            if(player != null) {
+                Rect playerRect = new Rect(player.position, Player.SPRITE_WIDTH, Player.SPRITE_HEIGHT);
+                Rect shockwaveRect = new Rect(position, WIDTH, HEIGHT);
+                if(shockwaveRect.Overlaps(playerRect)) {
+                    if(player.position.X < position.X)
+                        player.velocity = new Vector2(-13f, -6f);
+                    else
+                        player.velocity = new Vector2(13f, -6f);
+                }
+            }
 
             timer -= deltaTime;
             if(timer <= 0f)

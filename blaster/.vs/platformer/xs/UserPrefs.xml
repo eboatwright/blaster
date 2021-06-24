@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{8647CB98-C05D-4FD6-BB46-A126C9198EB4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/gameObjects/Shockwave.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/gameObjects/Map.cs">
     <Files>
-      <File FileName="src/gameObjects/Shockwave.cs" Line="44" Column="40" />
+      <File FileName="src/gameObjects/Player.cs" Line="95" Column="1" />
+      <File FileName="src/gameObjects/Map.cs" Line="24" Column="45" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,8 +12,9 @@
               <Node name="Content" expanded="True" />
               <Node name="src" expanded="True">
                 <Node name="gameObjects" expanded="True">
-                  <Node name="Shockwave.cs" selected="True" />
+                  <Node name="Map.cs" selected="True" />
                 </Node>
+                <Node name="scenes" expanded="True" />
               </Node>
             </Node>
           </Node>

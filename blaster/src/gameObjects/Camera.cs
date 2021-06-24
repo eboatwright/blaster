@@ -27,7 +27,7 @@ namespace eboatwright {
 
         public override void Update(float deltaTime, MouseState mouse, KeyboardState keyboard) {
             player = (Player)scene.FindGameObjectWithTag("Player");
-            if(player != null)
+            if(player != null && player.position.X < 2750)
                 if (player.position.X > mainScroll.X + 240)
                     mainScroll.X += 240;
 
