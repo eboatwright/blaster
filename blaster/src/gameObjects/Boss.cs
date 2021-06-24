@@ -82,14 +82,13 @@ namespace eboatwright {
 
         public override void Initialize() {
             animator = new Animator(new Animation[]{
-                new Animation(new int[] { 4, 5, 6, 7 }, 8f),
-                new Animation(new int[] { 8, 9 }, 8f)
+                new Animation(new int[] { 0, 1, 2, 3 }, 8f),
             });
             animator.ChangeAnimation((int)ANIMATION_STATES.WALK, false);
             AddTags(new string[] { "Boss" });
             Health = 32;
 
-            position = new Vector2((960 / 4) * 11.5f, 16 * 6);
+            position = new Vector2(2760f, 96f);
         }
 
         public override void LoadContent() {
@@ -115,7 +114,7 @@ namespace eboatwright {
             if(player != null) {
                 if (shockwaveCooldown <= 0f) {
                     shockwaveCooldown = 10f;
-                    if (Vector2.Distance(position, player.position) <= 25f)
+                    if (Vector2.Distance(position, player.position) <= 24f)
                         scene.AddGameObject(new Shockwave(scene));
                 } else
                     shockwaveCooldown -= deltaTime;

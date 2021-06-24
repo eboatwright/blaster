@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 namespace eboatwright {
     public class Shockwave : GameObject {
 
-        public const int WIDTH = 36, HEIGHT = 36;
+        public const int WIDTH = 32, HEIGHT = 32;
 
         public float timer = 16f;
         private Texture2D shockwaveImg;
@@ -37,7 +37,7 @@ namespace eboatwright {
                 Destroy();
                 return;
             }
-            position = scene.FindGameObjectWithTag("Boss").position - Vector2.One * 2;
+            position = scene.FindGameObjectWithTag("Boss").position;
 
             player = (Player)scene.FindGameObjectWithTag("Player");
             if(player != null) {

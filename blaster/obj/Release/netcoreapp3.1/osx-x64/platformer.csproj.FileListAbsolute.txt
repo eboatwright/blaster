@@ -223,3 +223,5 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/obj/Release/netcoreapp3.1/osx-x64/platformer.dll
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/obj/Release/netcoreapp3.1/osx-x64/platformer.pdb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/platformer/platformer/obj/Release/netcoreapp3.1/osx-x64/platformer.genruntimeconfig.cache
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/obj/Release/netcoreapp3.1/osx-x64/platformer.dll
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/obj/Release/netcoreapp3.1/osx-x64/platformer.pdb

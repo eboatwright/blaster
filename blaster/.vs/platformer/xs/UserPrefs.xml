@@ -1,20 +1,14 @@
 ﻿<Properties StartupConfiguration="{8647CB98-C05D-4FD6-BB46-A126C9198EB4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/gameObjects/Map.cs">
-    <Files>
-      <File FileName="src/gameObjects/Player.cs" Line="95" Column="1" />
-      <File FileName="src/gameObjects/Map.cs" Line="24" Column="45" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="platformer" expanded="True">
             <Node name="platformer" expanded="True">
-              <Node name="Content" expanded="True" />
               <Node name="src" expanded="True">
                 <Node name="gameObjects" expanded="True">
-                  <Node name="Map.cs" selected="True" />
+                  <Node name="Shockwave.cs" selected="True" />
                 </Node>
-                <Node name="scenes" expanded="True" />
               </Node>
             </Node>
           </Node>

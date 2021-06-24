@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PlatformerAssets/player.png</SourceFile>
-  <SourceTime>2021-06-20T21:07:03.4718875-05:00</SourceTime>
+  <SourceTime>2021-06-24T14:18:51.0430208-05:00</SourceTime>
   <DestFile>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/bin/DesktopGL/Content/player.xnb</DestFile>
-  <DestTime>2021-06-22T20:09:24.085231-05:00</DestTime>
+  <DestTime>2021-06-24T14:53:34.4735871-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
