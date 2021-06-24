@@ -93,3 +93,5 @@
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/music/likeclockwork.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/music/robotdance.xnb
 /Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/music/space.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/boss/shockwave.xnb
+/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/bin/Debug/netcoreapp3.1/Content/boss/shockwaveImg.xnb

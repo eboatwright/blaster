@@ -15,11 +15,11 @@ namespace eboatwright {
 
         public const int SPRITE_WIDTH = 16, SPRITE_HEIGHT = 16;
         public const int COLLISION_WIDTH = 17, COLLISION_HEIGHT = 17;
-        public const float MOVE_SPEED = 0.69f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -5.6f, COYOTE_TIME = 8, GUN_RECOIL = 0.6f;
+        public const float MOVE_SPEED = 0.69f, FRICTION = 0.7f, GRAVITY = 0.34f, JUMP_HEIGHT = -5.6f, COYOTE_TIME = 8, GUN_RECOIL = 0.6f, JUMP_CUTOFF = 0.4f;
 
         private Vector2 SHOOT_RIGHT_OFFSET = new Vector2(11, 5), SHOOT_LEFT_OFFSET = new Vector2(-1, 5);
 
-        private bool jumpReleased, shootReleased;
+        private bool jumpReleased, jumpJustReleased, shootReleased;
         private float lastGrounded = 0f;
         
         private Vector2 velocity;
@@ -80,7 +80,7 @@ namespace eboatwright {
                 new Animation(new int[] { 5 }, 7f)
             });
             healthBar = (PlayerHealthBar)scene.AddGameObject(new PlayerHealthBar(scene));
-            Health = healthBar.health = 20;
+            Health = healthBar.health = 4;
 
             position = new Vector2(16, 64);
         }
@@ -118,6 +118,7 @@ namespace eboatwright {
                 animator.ChangeAnimation((int)ANIMATION_STATES.IDLE);
 
             if (keyboard.IsKeyDown(Keys.X)) {
+                jumpJustReleased = false;
                 if (jumpReleased) {
                     jumpReleased = false;
                     if (lastGrounded > 0f) {
@@ -126,8 +127,14 @@ namespace eboatwright {
                         jumpSfx.Play();
                     }
                 }
-            } else
+            } else {
                 jumpReleased = true;
+                if(!jumpJustReleased) {
+                    jumpJustReleased = true;
+                    if(velocity.Y < 0f)
+                        velocity.Y *= JUMP_CUTOFF;
+                }
+            }
 
             if (lastGrounded <= 0f && !animator.doingUninterruptableAnimation)
                 animator.ChangeAnimation((int)ANIMATION_STATES.JUMP);

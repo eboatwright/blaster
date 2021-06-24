@@ -25,6 +25,12 @@
 /processorParam:Quality=Best
 /build:../../../../GAME ASSETS/PICOSoundLibrary/playerHit.wav;sfx/playerHit.wav
 
+#begin ../../../../GAME ASSETS/PICOSoundLibrary/shockwave.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:../../../../GAME ASSETS/PICOSoundLibrary/shockwave.wav;boss/shockwave.wav
+
 #begin ../../../../GAME ASSETS/PlatformerAssets/background.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -168,6 +174,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../../../../GAME ASSETS/PlatformerAssets/playerProjectile.png;playerProjectile.png
+
+#begin ../../../../GAME ASSETS/PlatformerAssets/shockwave.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../../GAME ASSETS/PlatformerAssets/shockwave.png;boss/shockwaveImg.png
 
 #begin ../../../../GAME ASSETS/PlatformerAssets/sparkle.png
 /importer:TextureImporter

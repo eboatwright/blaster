@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/../../../../GAME ASSETS/PICOSoundLibrary/shockwave.wav</SourceFile>
+  <SourceTime>2021-06-23T19:11:15.292822-05:00</SourceTime>
+  <DestFile>/Users/evanboatwright/Desktop/ALL GAME FILES/Monogame/blaster/blaster/Content/bin/DesktopGL/Content/boss/shockwave.xnb</DestFile>
+  <DestTime>2021-06-23T19:13:23.1310637-05:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2020-08-10T16:17:54-05:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

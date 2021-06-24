@@ -32,6 +32,10 @@ namespace eboatwright {
 
         private bool playedMusic;
 
+        private Player player;
+
+        private float shockwaveCooldown = 0f;
+
 
         public int Health { get; set; }
 
@@ -100,6 +104,16 @@ namespace eboatwright {
                 Main.currentSong.Stop();
                 Main.currentSong = Main.bossSong;
                 Main.currentSong.Play();
+            }
+
+            player = (Player)scene.FindGameObjectWithTag("Player");
+            if(player != null) {
+                if (shockwaveCooldown <= 0f) {
+                    shockwaveCooldown = 24f;
+                    if (Vector2.Distance(position, player.position) <= 28f)
+                        scene.AddGameObject(new Shockwave(scene));
+                } else
+                    shockwaveCooldown -= deltaTime;
             }
 
             velocity.X += direction * MOVE_SPEED;
